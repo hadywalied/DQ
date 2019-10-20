@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".drawerui.PatientsActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_get_all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/patients_recycler_item"
+        android:visibility="visible" />
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

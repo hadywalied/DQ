@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.admins.dq">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".result.ResultsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".diagnosis.DiagnosingActivity" />
+        <activity
+            android:name=".sessionStart.SessionActivity"
+            android:label="@string/title_activity_session"
+            android:noHistory="true"
+            android:parentActivityName=".drawerui.PatientsActivity"
+            android:theme="@style/MyTheme.DayNight">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.admins.dq.drawerui.PatientsActivity" />
+        </activity>
+        <activity
+            android:name=".drawerui.PatientsActivity"
+            android:label="@string/title_activity_patients"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme.DayNight" />
+        <activity
+            android:name=".loginui.AuthActivity"
+            android:label="@string/title_activity_auth"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyTheme.DayNight">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+
+        <!-- The below code is for android OS version below N -->
+        <receiver
+            android:name=".utils.ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
